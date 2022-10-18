@@ -1,0 +1,65 @@
+       
+
+
+ Merge Sorted Array
+		思路:因為nums1為排序過所以用一個FIFO queue 去紀錄每次可能的最小值
+			
+			
+
+	i= 0,j=0
+	[1,2,4,6,7,8,9,10,0,0,0]
+	[3,6,9]
+
+
+	[1,2,3,6,7,8,910,0,0,0]
+	temp = 4
+	
+	[1,2,3,6,7,8,910,0,0,0].
+	[3,6,9]
+
+	[4]
+		temp[0] vs 6  temp[0] 小
+		temp.append(nums[i])
+		nums[i] = temp.pop(0)
+		i+=1
+		 
+	[1,2,3,4,7,8,910,0,0,0].
+	[3,6,9]
+	[6]
+		temp[0] vs nums[j]  temp[0] 小
+
+		temp.append(nums[i])
+		nums[i] = temp.pop(0)
+		i+=1
+		
+	[1,2,3,4,6,6,910,0,0,0].
+	[3,6,9]
+	[7,8]
+	temp[0] vs nums2[j]  nums2[j] 小
+	temp.append(nums1[i])
+	nums1[i] = nums2[j]
+	i++
+	j++
+
+			
+	[1,2,3,4,6,6,910,0,0,0].
+	[3,6,9]
+	[7,8]
+	temp[0] vs nums2[j]
+	7                9              temp[0]小
+
+		temp.append(nums[i])
+		nums[i] = temp.pop(0)
+		i+=1
+	[1,2,3,4,6,6,7,8,9,9,10].
+	[3,6,9]
+	[]
+	
+
+   			if num1[i] < num2[j] :
+				i+=1
+			else num1[i] > num2[j]
+				temp.append(nums[i])	
+				nums[i]= nums2[j]
+				i+=1
+				j+=1

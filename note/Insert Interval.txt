@@ -1,0 +1,44 @@
+Insert Interval
+
+a[0] a[1]
+
+for i in interval :
+	for m,n in in i :
+		if m<=a[0] and n>a[1]
+			start = m
+			interval.remove(i)
+		if m<a[1] and n >=a[1]
+			end = n		
+			interval.remove(i)
+		if m >a[0] n< a[1]:
+			interval.remove(i)
+interval.append([start,end])
+interval.sort(key=s)
+
+def s(i)
+ retrun s[0]
+
+
+
+	1,2   3,5   6,10   12,13               start = 4 end = 7
+	4,7
+------------------------------------
+	1,2                12,13    +[3,10]
+	start = 3   end = 10
+		
+	1,2    3,10 12,13
+
+
+
+
+
+	3,5   6,10   12,13               start = 2 end = 9
+	2,9
+------------------------------------
+	      	     [12,13]  +[2,10]            
+	start = 2   end = 10
+
+	[2,10] [12,13]
+		
+	
+

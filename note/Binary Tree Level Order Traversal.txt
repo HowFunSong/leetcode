@@ -1,0 +1,21 @@
+Binary Tree Level Order Traversal
+
+
+BSF traversal
+
+[1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+先做一個arr 把 head 放進去[1]
+      只要arr 非空(第一個迴圈)
+	只要arr 非空
+		就先把node 推出來
+		把左右子節加入 arr2(要先確認子節非空)
+		然後做一個data = [] ，如果node不為空，append.(node.val)  (FIFO)
+	直到arr 為空
+
+	最後res.append(data)取得當層的val
+	然後再把arr =arr2.copy()
+	arr2 []
+
+
+
+

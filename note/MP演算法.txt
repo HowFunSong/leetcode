@@ -1,0 +1,51 @@
+		MP演算法
+
+                                  
+				   1
+           		T   =	 c t c a a t b a c a a t c a t
+		        P   =    c a a t c a t 
+
+  Ｐ　失效
+      c  a  a  t  c  a  t  
+　　　0  1  2  3  4  5  6  7
+  -------------------------   
+     -1 -1 -1 -1  0  1 -1  P(j-1)+1
+整理配對位置P f(j-1)+1 
+      0  0  0  0  0  1  2  0
+
+討論 7 的位置配對0 可以當 j = 7 時對配對記數+1 ,然後把字首移到這裡繼續配對
+     	
+	
+
+	           	T   =	 c t c a a t b a c a a t c a t
+		        P   =      c a a t c a t 
+			
+		  	T   =	 c t c a a t b a c a a t c a t
+		        P   =        c a a t c a t 
+					     ^
+					     |fail
+
+		Why?	T   =	 c t c a a t b a c a a t c a t
+		        P   =                c a a t c a t 
+			
+			T   =	 c t c a a t b a c a a t c a t
+		        P   =                  c a a t c a t 
+			
+			T   =	 c t c a a t b a c a a t c a t
+		        P   =                    c a a t c a t 
+
+				finish
+
+
+		失效函數如何求?
+
+		j  0 1 
+	     f(j)  0 0
+
+	j=0	P[0]!= P[1]
+	
+	j=2    P[0] != P[2]
+		P[0]+P[1] != P[1] P[2]
+  			
+					    
+					    

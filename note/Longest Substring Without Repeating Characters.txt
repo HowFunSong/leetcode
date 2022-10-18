@@ -1,0 +1,29 @@
+Longest Substring Without Repeating Characters
+
+		" a b c a c a d f b c b b "
+		  a b c a                      abc
+		    b c a c a                   bca
+		        a c a                  ac
+		          c a d f b c          cadfb
+			    a d f b c  b       adfbc 
+				    c  b b     cb
+                                         b     b
+
+                                        done
+
+			用一個set 一個list
+		{a,b,c}   [a,b,c]
+	        加入前檢查set 如果沒有加入set list 
+		加入前檢查set 如果有 
+			      1.list先加進一個foundlist
+			      2.檢查list第一個有沒有等於現在看到的元素
+ 			      3.if 沒有 從set list 中移除，接下去看
+	                      4.直到檢查的元素跟目前看到的一樣，pop list，結束
+		直到檢查到最後一個
+
+簡化版可以用counter 做結算 每次找到重複值就進行一次結算最大值
+counnter調整後再繼續直到下次結算或結束
+
+		
+	
+			

@@ -1,0 +1,13 @@
+	"ADOBECODEBANC", t = "ABC"
+
+checkset{A:count ,B:count , C:count}
+
+思路:
+ r l 先指到第一個符合set(t) 中字元
+ r = l = i
+ 1. 然後開始移動l ，遇到自set(t) 中的加進去，直到checkset 中的每個count都符合
+ 2. 試試看能否移動r ，開始試著刪減 字元 直到不能刪
+ 3. 紀錄目前最小的window size(l,r) (l-r+1)有沒有小於最之前的最小window(r,l) minsize = r-l+1
+ 4. 回到step(1)
+		ADOBECODEBANC
+		
